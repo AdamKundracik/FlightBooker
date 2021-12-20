@@ -63,70 +63,77 @@ class MysqlFlightDaoTest {
 		
 	}
 
-//	@Test
-//	void testInsert() {
-//
-//		Airport airport1 = new Airport("England", "London", "London airport", "LND");
-//		Airport airportSaved = airportDao.save(airport1);
-//		LocalDateTime localDate = LocalDateTime.of(2021, 12, 21, 12, 12, 10);
-//		LocalDateTime localDate1 = LocalDateTime.of(2021, 12, 21, 21, 15, 38);
-//		LocalDate date1 = LocalDate.now();
-//		List<Customer> listCustomers = new ArrayList<>();
-//		Flight flight1 = new Flight(null, date1, airportSaved.getId(), airportSaved.getId(), "Slovak Airlines",
-//				"Bussines", 1, localDate, localDate1);
-//		LocalDate date = LocalDate.of(2021, 12, 21);
-//		Customer customer = new Customer("Tester", "Of delete", date, "Male", 24L, "Trencinska ulica");
-//		Customer savedCustomer = customerDao.save(customer);
-//
-//		// int numberOfFlights = flightDao.getByAirport(airportSaved).size();
-//
-//		listCustomers.add(savedCustomer);
-//		listCustomers.add(customerDao.save(new Customer("Tester2", "Of insert", date, "Female", 27L, "Popradska")));
-//		flight1.setCustomers(listCustomers);
-//		Flight saved = flightDao.save(flight1);
-//		assertEquals(saved, flight1);
-//		assertEquals(listCustomers.size(), saved.getCustomers().size());
-//		assertNotNull(saved.getId());
-//	}
+	@Test
+	void testInsert() {
 
-//	@Test
-//	void testDelete() {
-//		List<Customer> customers = customerDao.getAll();
-//		Airport airport1 = new Airport("England", "London", "London airport", "LND");
-//		Airport airportSaved = airportDao.save(airport1);
-//		LocalDateTime localDate = LocalDateTime.of(2021, 12, 21, 12, 12, 10);
-//		LocalDateTime localDate1 = LocalDateTime.of(2021, 12, 21, 21, 15, 38);
-//		Flight flightToDelete = new Flight(null, LocalDate.now(), airportSaved.getId(), airportSaved.getId(),
-//				"Slovak Airlines", "Bussines", 40, localDate, localDate1, customers);
-//		Flight saved = flightDao.save(flightToDelete);
-//		List<Flight> all = flightDao.getByAirport(airportSaved);
-//		boolean success = flightDao.delete(saved.getId());
-//		assertTrue(success);
-//		assertEquals(all.size() - 1, flightDao.getByAirport(airportSaved).size());
-//		assertFalse(flightDao.delete(saved.getId()));
-//		assertFalse(flightDao.delete(-1L));
-//
-//	}
-//}
-//	
-//	@Test
-//	void testIsFull() {
-//		 Airport airport1 = new Airport("England", "London", "London airport", "LND");
-//		 Airport airportSaved = airportDao.save(airport1); LocalDateTime localDate =
-//		 LocalDateTime.of(2021, 12, 21, 12, 12, 10); LocalDateTime localDate1 =
-//		 LocalDateTime.of(2021, 12, 21, 21, 15, 38); Flight flight = new Flight(null,
-//		 LocalDate.now(), airportSaved.getId(), airportSaved.getId(), "Slovak Airlines", "Bussines", 1, localDate, localDate1); 
-//		 LocalDate date = LocalDate.of(2021, 12, 21); 
-//		 Customer customer = new Customer("Tester","Of delete", date, "Male", 24L, "Trencinska ulica"); 
-//		 Customer savedCustomer = customerDao.save(customer); 
-//		 List<Customer> customers = new ArrayList<>();
-//		 customers.add(savedCustomer); 
-//		 flight.getCustomers().add(savedCustomer);
-//		 Flight saved = flightDao.save(flight); //System.out.println(saved); 
-//		 boolean trueOrFalse = flightDao.isFull(saved); //System.out.println(trueOrFalse);
-//		 assertTrue(trueOrFalse);
-//		 
-//	}
+		Airport airport1 = new Airport("England", "London", "London airport", "LND");
+		Airport airportSaved = airportDao.save(airport1);
+		LocalDateTime localDate = LocalDateTime.of(2021, 12, 21, 12, 12, 10);
+		LocalDateTime localDate1 = LocalDateTime.of(2021, 12, 21, 21, 15, 38);
+		LocalDate date1 = LocalDate.now();
+		List<Customer> listCustomers = new ArrayList<>();
+		Flight flight1 = new Flight(null, date1, airportSaved.getId(), airportSaved.getId(), "Slovak Airlines",
+				"Bussines", 1, localDate, localDate1);
+		LocalDate date = LocalDate.of(2021, 12, 21);
+		Customer customer = new Customer("Tester", "Of delete", date, "Male", 24L, "Trencinska ulica");
+		Customer savedCustomer = customerDao.save(customer);
+
+		// int numberOfFlights = flightDao.getByAirport(airportSaved).size();
+
+		listCustomers.add(savedCustomer);
+		listCustomers.add(customerDao.save(new Customer("Tester2", "Of insert", date, "Female", 27L, "Popradska")));
+		flight1.setCustomers(listCustomers);
+		Flight saved = flightDao.save(flight1);
+		assertEquals(saved, flight1);
+		assertEquals(listCustomers.size(), saved.getCustomers().size());
+		assertNotNull(saved.getId());
+	}
+
+	@Test
+	void testDelete() {
+		List<Customer> customers = customerDao.getAll();
+		Airport airport1 = new Airport("England", "London", "London airport", "LND");
+		Airport airportSaved = airportDao.save(airport1);
+		LocalDateTime localDate = LocalDateTime.of(2021, 12, 21, 12, 12, 10);
+		LocalDateTime localDate1 = LocalDateTime.of(2021, 12, 21, 21, 15, 38);
+		Flight flightToDelete = new Flight(null, LocalDate.now(), airportSaved.getId(), airportSaved.getId(),
+				"Slovak Airlines", "Bussines", 40, localDate, localDate1, customers);
+		Flight saved = flightDao.save(flightToDelete);
+		List<Flight> all = flightDao.getByAirport(airportSaved);
+		boolean success = flightDao.delete(saved.getId());
+		assertTrue(success);
+		assertEquals(all.size() - 1, flightDao.getByAirport(airportSaved).size());
+		assertFalse(flightDao.delete(saved.getId()));
+		assertFalse(flightDao.delete(-1L));
+
+	}
+	
+	@Test
+    void testIsFull() {
+         Airport airport1 = new Airport("England", "London", "London airport", "LND");
+         Airport airportSaved = airportDao.save(airport1); 
+         LocalDateTime localDate = LocalDateTime.of(2021, 12, 21, 12, 12, 10); 
+         LocalDateTime localDate1 = LocalDateTime.of(2021, 12, 21, 21, 15, 38);
+         Flight flight = new Flight(null,
+         LocalDate.now(), airportSaved.getId(), airportSaved.getId(), "Slovak Airlines", "Bussines", 3, localDate, localDate1); 
+         LocalDate date = LocalDate.of(2021, 12, 21); 
+         Customer customer = new Customer("Tester","Of delete", date, "Male", 24L, "Trencinska ulica"); 
+         Customer savedCustomer = customerDao.save(customer); 
+         List<Customer> customers = new ArrayList<>();
+         customers.add(savedCustomer); 
+         flight.setCustomers(customers);
+         Flight saved = flightDao.save(flight); 
+         System.out.println(saved); 
+         boolean trueOrFalse = flightDao.isFull(saved); 
+         System.out.println(trueOrFalse);
+         if(saved.getCustomers().size() == saved.getNumberOfSeats()) {
+             assertTrue(trueOrFalse);
+         }
+         else {
+             assertFalse(trueOrFalse);
+         }
+         
+    }
 //
 //	@Test
 //	void testUpdate() {
@@ -182,31 +189,30 @@ class MysqlFlightDaoTest {
 //				flightDao.save(null);
 //			}
 //		});
+
+		
+		//Flight saved = flightDao.save(flight1);
+		
+		
+		
+		
+		
+//		saved.getCustomers().add(savedCustomer1);
+//		System.out.println(saved);
+//		flightDao.save(saved);
+//		List<Customer> list = customerDao.getByFlightId(saved.getId());
+//		System.out.println(list.size());
+//		
 //
 //		
-//		//Flight saved = flightDao.save(flight1);
-//		
-//		
-//		
-//		
-//		
-////		saved.getCustomers().add(savedCustomer1);
-////		System.out.println(saved);
-////		flightDao.save(saved);
-////		List<Customer> list = customerDao.getByFlightId(saved.getId());
-////		System.out.println(list.size());
-////		
-////
-////		
-////		saved.getCustomers().add(customers.get(0));
-////		System.out.println(saved);
-////		flightDao.save(saved);
-////		System.out.println(saved);
-////		assertEquals(saved, flight1);
-////		assertEquals(list.size() + 1, customerDao.getByFlightId(saved.getId()).size());
-//		
-//		
-//	}
+//		saved.getCustomers().add(customers.get(0));
+//		System.out.println(saved);
+//		flightDao.save(saved);
+//		System.out.println(saved);
+//		assertEquals(saved, flight1);
+//		assertEquals(list.size() + 1, customerDao.getByFlightId(saved.getId()).size());
+		
+	
 //	
 //	@Test
 //	void testGetByAirport() {
@@ -253,11 +259,6 @@ class MysqlFlightDaoTest {
 //				flightDao.getByAirport(null);
 //			}
 //		});
-//		assertThrows(EntityNotFoundException.class, new Executable() {
-//			@Override
-//			public void execute() throws Throwable {
-//				flightDao.getByAirport(new Airport());
-//			}
-//		});
+//	}
 
 }

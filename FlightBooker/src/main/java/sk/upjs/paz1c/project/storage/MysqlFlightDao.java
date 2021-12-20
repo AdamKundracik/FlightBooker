@@ -78,11 +78,6 @@ public class MysqlFlightDao implements FlightDao {
 		if (flight == null) {
 			throw new NullPointerException("Flight cannot be null");
 		}
-		for (Customer customer : flight.getCustomers()) {
-			if (customer.getId() == null) {
-				throw new NullPointerException("Customer has no ID: " + customer);
-			}
-		}
 
 		if (flight.getId() == null) { // INSERT
 			SimpleJdbcInsert insert = new SimpleJdbcInsert(jdbcTemplate);

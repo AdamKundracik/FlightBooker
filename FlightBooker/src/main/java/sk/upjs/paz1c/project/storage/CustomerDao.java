@@ -12,6 +12,6 @@ public interface CustomerDao {
 	
 	Customer save(Customer customer) throws EntityNotFoundException, NullPointerException;
 	
-	Customer delete(long idCustomer) throws EntityNotFoundException, EntityUndeleteableException;
+	Customer delete(long idCustomer) throws EntityNotFoundException;
 
 }

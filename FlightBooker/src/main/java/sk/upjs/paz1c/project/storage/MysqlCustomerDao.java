@@ -106,13 +106,9 @@ public class MysqlCustomerDao implements CustomerDao {
 	}
 
 	@Override
-	public Customer delete(long idCustomer) throws  EntityUndeleteableException {
+	public Customer delete(long idCustomer) {
 		Customer customer = getById(idCustomer);
-		try {
 			jdbcTemplate.update("DELETE FROM customer WHERE id = " + idCustomer);
-		} catch (DataIntegrityViolationException e) {
-			throw new EntityUndeleteableException("Customer is a part of some flight, cannot be deleted", e);
-		}
 		return customer;
 	}
 	
