@@ -46,5 +46,10 @@
       </ImageView>
       <Button fx:id="createButton" layoutX="496.0" layoutY="336.0" mnemonicParsing="false" onAction="#saveAirport" prefHeight="26.0" prefWidth="59.0" text="Create" />
       <Button fx:id="cancelButton" layoutX="416.0" layoutY="336.0" mnemonicParsing="false" onAction="#cancel" prefHeight="26.0" prefWidth="59.0" text="Cancel" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="400.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../../../../Desktop/uwduzwd.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

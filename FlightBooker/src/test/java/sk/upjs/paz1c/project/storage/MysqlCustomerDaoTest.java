@@ -165,43 +165,4 @@ class MysqlCustomerDaoTest {
 
 	}
 
-//	@Test
-//	void testGetByFlightId() {
-//		LocalDate date = LocalDate.of(2021, 12, 21);
-//		LocalDateTime departure = LocalDateTime.of(2021, 12, 5, 12, 34, 45);
-//		LocalDateTime arrival = LocalDateTime.of(2021, 12, 5, 12, 50, 45);
-//		Airport airport = new Airport("England", "London", "London airport", "LND");
-//		Airport airportSaved = airportDao.save(airport);
-//
-//		Customer customer1 = new Customer("Tester", "Of bySubjectId", date, "Male", 24L, "Martinska ulica");
-//		Customer customer2 = customerDao.save(customer1);
-//		List<Customer> customers = customerDao.getAll();
-//		Flight flight = new Flight(date, airportSaved.getId(), airportSaved.getId(), "Slovak Airlines", "Bussines", 45,
-//				departure, arrival, customers);
-//
-//		Flight saved = flightDao.save(flight);
-//
-//		List<Customer> listCustomers = new ArrayList<Customer>();
-//        listCustomers.add(customer2);
-//        saved.setCustomers(listCustomers);
-//		System.out.println(saved);
-//		flightDao.save(saved);
-//		List<Customer> list = customerDao.getByFlightId(saved.getId());
-//		System.out.println(list.size());
-//
-//		saved.getCustomers().add(customers.get(0));
-//		System.out.println(saved);
-//		flightDao.save(saved);
-//		System.out.println(saved);
-//		assertEquals(list.size() + 1, customerDao.getByFlightId(saved.getId()).size());
-//		assertThrows(EntityUndeleteableException.class, new Executable() {
-//			@Override
-//			public void execute() throws Throwable {
-//				customerDao.delete(customer2.getId());
-//			}
-//		});
-
-//		List<Customer> list2 = customerDao.getByFlightId(-1); 
-//		assertEquals(0,list2.size());
-
 }
